@@ -1,0 +1,15 @@
+.botao-estilizado {
+    background-color: #000000;
+    color: white;
+    padding: 12px 24px;
+    font-size: 26px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botao-estilizado:hover {
+    background-color: #000000;
+  }
+  
