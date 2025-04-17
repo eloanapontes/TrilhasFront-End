@@ -3,6 +3,8 @@ import Button from './components/Trilha1/exercicio1/exercicio1Button';
 import ProfileCard from './components/Trilha1/exercicio2/Card';
 import imagem from './assets/img/eu.jpeg';
 import Gallery from './components/Trilha1/exercicio4/Gallery';
+import Navbar from './components/Trilha1/exercicio5/Navbar';
+/////////////////////////////////////////////////////////
 import faker from './assets/img/faker.webp';
 import wizer from './assets/img/wizer.webp';
 import cariok from './assets/img/cariok.webp';
@@ -25,7 +27,7 @@ const App: React.FC = () => {
   ];
 
   const handleClick = () => {
-    alert('Você clicou no botão!');
+    alert('você clicou no botão!');
   };
 
   return (
@@ -37,6 +39,8 @@ const App: React.FC = () => {
           <button onClick={() => setExercicioAtivo(1)}>Exercício 1</button>
           <button onClick={() => setExercicioAtivo(2)}>Exercício 2 e 3</button>
           <button onClick={() => setExercicioAtivo(3)}>Exercício 4</button> 
+          <button onClick={() => setExercicioAtivo(4)}>Exercício 5</button>
+
         </div>
 
         {exercicioAtivo === 1 && (
@@ -63,6 +67,13 @@ const App: React.FC = () => {
             <Gallery imagens={imagensGaleria} />
           </>
         )}
+        {exercicioAtivo === 4 && (
+          <>
+            <h2>Navbar flex</h2>
+            <Navbar />
+          </>
+        )}
+        
       </center>
     </div>
   );
