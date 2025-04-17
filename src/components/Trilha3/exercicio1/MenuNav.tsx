@@ -1,14 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Menu: React.FC = () => {
+import React from 'react';
+
+const Exercicio1: React.FC = () => {
   return (
-    <nav style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
-      <Link to="/home">Home</Link>
-      <Link to="/about">Sobre</Link>
-      <Link to="/contact">Contato</Link>
-    </nav>
+    <div>
+      <h3>Menu de Navegação</h3>
+      <nav>
+        <a href="/">Home</a> | <a href="/about">Sobre</a> | <a href="/contact">Contato</a>
+      </nav>
+    </div>
   );
 };
 
-export default Menu;
+export default Exercicio1;
