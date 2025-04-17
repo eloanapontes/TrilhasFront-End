@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Button from './components/Trilha1/exercicio1/exercicio1Button';
 import ProfileCard from './components/Trilha1/exercicio2/Card';
 import imagem from './assets/img/eu.jpeg';
@@ -7,6 +8,12 @@ import Navbar from './components/Trilha1/exercicio5/Navbar';
 import ContactForm from './components/Trilha1/exercicio6/ContactForm';
 
 import Contador from './components/Trilha2/exercicio1/Contador';
+import Saudacao from './components/Trilha2/exercicio2/Saudacao';
+import ListaTarefas from './components/Trilha2/exercicio3/ListaTarefas';
+import ToggleVisibilidade from './components/Trilha2/exercicio4/ToggleVisibilidade';
+
+import Exercicio1 from './components/Trilha3/exercicio1/MenuNav'; 
+
 
 /////////////////////////////////////////////////////////
 import faker from './assets/img/faker.webp';
@@ -20,7 +27,7 @@ import pain from './assets/img/pain.png';
 const App: React.FC = () => {
   const [trilhaAtiva, setTrilhaAtiva] = useState<number | null>(null);
   const [exercicioAtivo, setExercicioAtivo] = useState<number | null>(null);
-
+  
   const imagensGaleria = [
     faker,
     wizer,
@@ -93,11 +100,54 @@ const App: React.FC = () => {
         <>
           <div style={{ marginBottom: '20px' }}>
             <button onClick={() => setExercicioAtivo(6)}>Exercício 1 - Contador</button>
+            <button onClick={() => setExercicioAtivo(7)}>Exercício 2 - Saudação</button>
+            <button onClick={() => setExercicioAtivo(8)}>Exercício 3 - Lista de Tarefas</button>
+            <button onClick={() => setExercicioAtivo(9)}>Exercício 4 - Visibilidade</button>
           </div>
+    
           {exercicioAtivo === 6 && (
             <>
               <h2>Contador Simples</h2>
               <Contador valorInicial={0} />
+            </>
+          )}
+    
+          {exercicioAtivo === 7 && (
+            <>
+              <h2>Saudação Personalizada</h2>
+              <Saudacao nomeInicial="" />
+            </>
+          )}
+    
+          {exercicioAtivo === 8 && (
+            <>
+              <h2>Lista de Tarefas</h2>
+              <ListaTarefas tarefasIniciais={['']} />
+            </>
+          )}
+    
+          {exercicioAtivo === 9 && (
+            <>
+              <h2>Controle de Visibilidade</h2>
+              <ToggleVisibilidade texto="verdade oculta sobre todas as coisas" />
+            </>
+          )}
+        </>
+      );
+    }
+
+    if (trilhaAtiva === 3) {
+      return (
+        <>
+          <div style={{ marginBottom: '20px' }}>
+            <button onClick={() => setExercicioAtivo(10)}>Exercício 1</button>
+            {/* Adicione mais botões aqui conforme for criando mais exercícios */}
+          </div>
+
+          {exercicioAtivo === 10 && (
+            <>
+              <h2>Exercício 1 - React Router</h2>
+              <Exercicio1 />
             </>
           )}
         </>
@@ -106,19 +156,18 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <center>
-        <h1>Escolha a Trilha</h1>
-
-        <div style={{ marginBottom: '20px' }}>
-          <button onClick={() => setTrilhaAtiva(1)}>Trilha 1</button>
-          <button onClick={() => setTrilhaAtiva(2)}>Trilha 2</button>
-        </div>
-
-        {renderExercicios()}
-
-      </center>
+    <Router>
+  <div>
+    <h1>Escolha a Trilha</h1>
+    <div style={{ marginBottom: '20px' }}>
+      <button onClick={() => setTrilhaAtiva(1)}>Trilha 1</button>
+      <button onClick={() => setTrilhaAtiva(2)}>Trilha 2</button>
+      <button onClick={() => setTrilhaAtiva(3)}>Trilha 3</button>
     </div>
+    {renderExercicios()}
+  </div>
+</Router>
+
   );
 };
 
