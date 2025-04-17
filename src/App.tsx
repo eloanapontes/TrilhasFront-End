@@ -4,6 +4,8 @@ import ProfileCard from './components/Trilha1/exercicio2/Card';
 import imagem from './assets/img/eu.jpeg';
 import Gallery from './components/Trilha1/exercicio4/Gallery';
 import Navbar from './components/Trilha1/exercicio5/Navbar';
+import ContactForm from './components/Trilha1/exercicio6/ContactForm';
+
 /////////////////////////////////////////////////////////
 import faker from './assets/img/faker.webp';
 import wizer from './assets/img/wizer.webp';
@@ -40,6 +42,8 @@ const App: React.FC = () => {
           <button onClick={() => setExercicioAtivo(2)}>Exercício 2 e 3</button>
           <button onClick={() => setExercicioAtivo(3)}>Exercício 4</button> 
           <button onClick={() => setExercicioAtivo(4)}>Exercício 5</button>
+          <button onClick={() => setExercicioAtivo(5)}>Exercício 6</button>
+
 
         </div>
 
@@ -73,6 +77,13 @@ const App: React.FC = () => {
             <Navbar />
           </>
         )}
+        {exercicioAtivo === 5 && (
+        <>
+          <h2>Formulário Estilizado</h2>
+          <ContactForm />
+        </>
+      )}
+
         
       </center>
     </div>
