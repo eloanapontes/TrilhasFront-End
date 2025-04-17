@@ -1,0 +1,13 @@
+.contador-container {
+    background-color: #f76565;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .botoes button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 16px;  }
+  
